@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Python Web Scraping</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static 'scraper/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'scraper/css/font-awesome.min.css' %}">
+  <link rel="stylesheet" href="{% static 'scraper/css/bootstrap.min.css.map' %}">
+  
+  <style>    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+	#hidediv {
+		display : none;
+	}
+	td {
+	  white-space: -o-pre-wrap; 
+      word-wrap: break-word;
+      white-space: pre-wrap; 
+      white-space: -moz-pre-wrap; 
+      white-space: -pre-wrap;
+	}
+	
+  </style>
+</head>
+<body style="background: gray">
+	<nav class="navbar navbar-inverse" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="{% url 'home' %}"><img class="img-responsive" src="#" alt=""></a>
+			</div>
+		
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" style="background-color: orange;">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+						
+			<div id="navbar" class="collapse navbar-collapse bg-dark">
+				
+				  <ul class="nav navbar-nav navbar-right">
+					<li{% if request.path == '/' %} class="active"{% endif %}><a href="{% url 'home' %}">Home</a></li>
+				  </ul>
+				
+			</div>
+				<!--/.nav-collapse -->
+		</div>
+		  <!--/.contatiner -->
+	</nav>
+
+<div class="container-fluid">
+	<div class="row">
+	{% block content %}
+	{% endblock %}
+	</div>
+</div>
+
+<div class="row row-no-gutters">
+	<div class="col-sm-12">
+		<footer class="footer">
+			<div class="row row-no-gutters">
+				<div class="col-sm-2 text-left">
+					<p>Powered by: CioMon</p>
+				</div>
+				<div class="col-sm-9 text-center">
+					<p>Python Web Scraping App of 2020</p>
+				</div>
+				<div class="col-sm-2 text-left">
+					<p></p>
+				</div>
+			</div>
+		</footer>
+	</div>
+</div>
+
+<script src="{% static 'scraper/js/jquery.min.js' %}"></script>
+<script src="{% static 'scraper/js/bootstrap.min.js' %}"></script>
+{% block scriptblock %}{% endblock %}	
+</body>
+</html>

@@ -1,0 +1,36 @@
+{% extends 'scraper/base.html' %}
+
+
+{% block content %}
+
+<div class="col-sm-12 bg-warning text-center">
+	<h3>Welcome to Python Web Scraping App!</div>
+	
+	<div class="row">
+		<div class="col-sm-1"></div>
+		
+		<div class="col-sm-10 bg-warning">
+			<div class="table table-bordered text-center">
+				<table class="table table-bordered table-stripe">
+					<thead>
+						<tr class="bg-success">
+							<td style="width: 100%">6/42 Lotto Result</td>
+						</tr>
+					</thead>
+					<tbody>
+			{% for lotto in lotto_result %}
+						<tr class="bg-light">
+							<td style="width: 100%">{{ lotto }}</td>
+						</tr>
+			{% endfor %}
+					</tbody>
+				</table>
+			</div>
+		</div>
+		
+		<div class="col-sm-1"></div>
+	</div>
+		
+</div>
+
+{% endblock %}
