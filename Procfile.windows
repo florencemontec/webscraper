@@ -1,1 +1,1 @@
-web: waitress-serve python manage.py runserver 0.0.0.0:8000
+web: waitress-serve python manage.py runserver --settings=webscraper.settings.production 0.0.0.0:8000
